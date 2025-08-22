@@ -65,7 +65,7 @@ def create_todo_agent(openapi_spec):
     openapi_spec_str = json.dumps(openapi_spec, indent=2)
     system_prompt = SYSTEM_PROMPT.format(openapi_spec_str=openapi_spec_str)
     agent = Agent(
-        name="Todo API Agent",
+        name="Todo Agent",
         instructions=system_prompt,
         tools=[make_api_call],
         model=OpenAIChatCompletionsModel(
